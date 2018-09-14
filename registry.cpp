@@ -1647,7 +1647,7 @@ void SaveSettingsToFile(void)
 					ZeroMemory(msg, sizeof(msg));
 					MtoW(msg, 128, MSGJPN366, strlen(MSGJPN366));
 					_snwprintf(msg, 128, msg, GetLastError());
-					MessageBox(GetMainHwnd(), MSGJPN366, L"FFFTP", MB_OK | MB_ICONERROR);
+					MessageBoxW(GetMainHwnd(), msg, L"FFFTP", MB_OK | MB_ICONERROR);
 					return;
 				}
 			}
