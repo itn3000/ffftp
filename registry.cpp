@@ -1639,14 +1639,15 @@ void SaveSettingsToFile(void)
 	{
 		if (auto const path = SelectFile(false, GetMainHwnd(), IDS_SAVE_SETTING, L"FFFTP.reg", L"reg", { FileType::Reg, FileType::All }); !std::empty(path))
 		{
-			if (PathFileExistsW(path.c_str()))
+			if (std::experimental::filesystem::exists(path))
 			{
-				if (!DeleteFileW(path.c_str()))
+				std::error_code er;
+				if (!std::experimental::filesystem::remove(path, er))
 				{
+					WCHAR msgtemplate[128];
 					WCHAR msg[128];
-					ZeroMemory(msg, sizeof(msg));
-					MtoW(msg, 128, MSGJPN366, strlen(MSGJPN366));
-					_snwprintf(msg, 128, msg, GetLastError());
+					MtoW(msgtemplate, 128, MSGJPN366, strlen(MSGJPN366));
+					_snwprintf(msg, 128, msgtemplate, er.value());
 					MessageBoxW(GetMainHwnd(), msg, L"FFFTP", MB_OK | MB_ICONERROR);
 					return;
 				}
