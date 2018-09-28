@@ -1,6 +1,6 @@
 ﻿//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ で生成されたインクルード ファイル。
-// ffftp.ja-JP.rc で使用
+// Microsoft Visual C++ generated include file.
+// Used by ffftp.ja-JP.rc
 //
 #define DELETE_ALL                      3
 #define DELETE_NO                       4
@@ -459,9 +459,9 @@
 #define HSET_FN_UTF8N_CNV               0x1905
 #define HSET_FN_UTF8HFSX_CNV            0x1907
 #define HSET_FN_AUTO_CNV                0x19FF
-#define TRMODE_ASCII                    0x1A41
-#define TRMODE_BIN                      0x1A49
-#define TRMODE_AUTO                     0x1A58
+#define TRMODE_BIN                      0x1A49/*I*/
+#define TRMODE_ASCII                    0x1A41/*A*/
+#define TRMODE_AUTO                     0x1A58/*X*/
 #define TRMODE2_NOCNV                   0x1B00
 #define TRMODE2_LOWER                   0x1B01
 #define TRMODE2_UPPER                   0x1B02
@@ -963,7 +963,7 @@
 #define HOST_SIZEGRIP                   65535
 
 // Next default values for new objects
-// 
+//
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NO_MFC                     1
